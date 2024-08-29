@@ -17,13 +17,21 @@ pipeline {
                 sh 'trivy fs . > trivyfsoutput.txt'
             }
         }
+        stage{
+            steps{
+                sh ''' 
+                    cd target
+                    sudo mv *.war surya.war
+                '''
+            }
+        }
         stage('tomcat server ssh'){
             steps{
                 sshagent(['tomcatserver']) {
                    // some block
                     sh '''
                         echo "from jenkins server"
-                        scp -o StrictHostKeyChecking=no . ubuntu@8.117.242.60/home/ubuntu 
+                        scp -o StrictHostKeyChecking=no surya.war ubuntu@8.117.242.60/home/ubuntu 
                         ssh ubuntu@18.117.242.60 echo "I am from tomcat server"
 
                     '''
