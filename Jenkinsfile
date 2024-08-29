@@ -8,10 +8,14 @@ pipeline {
             }
         }
         stage('maven build'){
-            sh 'mvn clean package'
+            steps {
+                sh 'mvn clean package'
+            }
         }
         stage('trivy fs scan'){
-            sh 'trivy fs .'
+            steps {
+                sh 'trivy fs .'
+            }
         }
     }
 }
