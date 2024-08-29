@@ -23,7 +23,7 @@ pipeline {
                    // some block
                     sh '''
                         echo "from jenkins server"
-                        ssh -o StrictHostKeyChecking=no ubuntu@8.117.242.60
+                        ssh -o StrictHostKeyChecking=no ubuntu@8.117.242.60 uname -a
                         ssh ubuntu@18.117.242.60 echo "I am from tomcat server"
 
                     '''
