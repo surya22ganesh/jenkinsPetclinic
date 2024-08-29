@@ -32,10 +32,8 @@ pipeline {
                     sh '''
                         echo "from jenkins server"
                         pwd
-                        scp -o StrictHostKeyChecking=no trivyfsoutput.txt ubuntu@8.117.242.60:/home/ubuntu 
-                        // scp -o StrictHostKeyChecking=no target/surya.war ubuntu@8.117.242.60:/home/ubuntu 
-                        ssh ubuntu@18.117.242.60 echo "I am from tomcat server"
-
+                        ssh ubuntu@8.117.242.60 -o StrictHostKeyChecking=no 
+                        scp target/surya.war ubuntu@8.117.242.60:/home/ubuntu
                     '''
                 }
             }
