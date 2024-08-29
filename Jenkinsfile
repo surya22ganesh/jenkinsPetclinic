@@ -21,7 +21,7 @@ pipeline {
             steps{
                 sh ''' 
                     cd target
-                    sudo mv *.war surya.war
+                    mv *.war surya.war
                 '''
             }
         }
