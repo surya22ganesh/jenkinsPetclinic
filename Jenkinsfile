@@ -31,7 +31,7 @@ pipeline {
                    // some block
                     sh '''
                         echo "from jenkins server"
-                        scp -o StrictHostKeyChecking=no surya.war ubuntu@8.117.242.60/home/ubuntu 
+                        scp -o StrictHostKeyChecking=no /target/surya.war ubuntu@8.117.242.60/home/ubuntu 
                         ssh ubuntu@18.117.242.60 echo "I am from tomcat server"
 
                     '''
