@@ -32,7 +32,8 @@ pipeline {
                     sh '''
                         echo "from jenkins server"
                         pwd
-                        ssh -tt -o StrictHostKeyChecking=no ubuntu@8.117.242.60 ls
+                        ssh -tt -o StrictHostKeyChecking=no ubuntu@8.117.242.60
+                        scp target/surya.war ubuntu@8.117.242.60:/opt
                     '''
                 }
             }
