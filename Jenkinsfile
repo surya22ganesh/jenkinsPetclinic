@@ -30,7 +30,7 @@ pipeline {
                 sshagent(['tomcatserver']) {
                    // some block
                     sh '''
-                        ssh ubuntu@8.117.242.60 -o StrictHostKeyChecking=no 
+                        ssh -tt ubuntu@8.117.242.60 -o StrictHostKeyChecking=no 
                         ssh ubuntu@8.117.242.60 echo tomcat agent added
                         scp target/surya.war ubuntu@8.117.242.60:/opt
                     '''
