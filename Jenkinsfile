@@ -29,12 +29,13 @@ pipeline {
             steps{
                 sshagent(['tomcatserver']) {
                    // some block
-                    sh '''
-                        echo "from jenkins server"
-                        pwd
+                     sh '''
                         ssh ubuntu@8.117.242.60 -o StrictHostKeyChecking=no 
-                        scp target/surya.war ubuntu@8.117.242.60:/home/ubuntu
-                    '''
+                        ssh ubuntu@8.117.242.60 echo tomcat agent added
+                        scp target/myweb.war ubuntu@8.117.242.60:/opt/
+                        // ssh ubuntu@8.117.242.60 /opt/apache10/bin/shutdown.sh
+                        // ssh ubuntu@8.117.242.60 /opt/apache10/bin/startup.sh
+                  '''
                 }
             }
         }
