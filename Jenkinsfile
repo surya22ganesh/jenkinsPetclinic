@@ -17,7 +17,7 @@ pipeline {
                 sh 'trivy fs . > trivyfsoutput.txt'
             }
         }
-        stage{
+        stage ('rename maven build package'){
             steps{
                 sh ''' 
                     cd target
