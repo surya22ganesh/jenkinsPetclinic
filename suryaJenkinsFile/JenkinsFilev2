@@ -7,11 +7,6 @@ pipeline {
     }
 
     stages{
-        stage('clean workspace'){
-            steps{
-                cleanWs()
-            }
-        }
         stage('hello world'){
             steps {
                 echo "hello world"
@@ -20,8 +15,8 @@ pipeline {
         stage('stage 2'){
             steps{
                 sh ''' 
-                    sudo mvn clean package 
-                    sudo mv target/*.war target/pet.war
+                    mvn clean package 
+                    mv target/*.war target/pet.war
                 '''
             }
         }
