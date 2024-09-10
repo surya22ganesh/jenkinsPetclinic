@@ -14,7 +14,10 @@ pipeline {
         }
         stage('stage 2'){
             steps{
-                sh 'mvn clean package'
+                sh ''' 
+                    sudo mvn clean package 
+                    sudo mv target/*.war target/pet.war
+                '''
             }
         }
     }
