@@ -20,16 +20,16 @@ pipeline {
                 '''
             }
         }
-        stage('ssh agent add - tomcat'){
-            steps{
-                sshagent(['3e88b74b-9cc2-40f4-9ae5-59d0e259067d']) {
-                    // some block
-                    sh ''' 
-                        ssh -o StrictHostKeyChecking=no -l cloudbees 3.144.95.142 uname -a
-                    '''
-                }
-            }
-        }
+        // stage('ssh agent add - tomcat'){
+        //     steps{
+        //         sshagent(['3e88b74b-9cc2-40f4-9ae5-59d0e259067d']) {
+        //             // some block
+        //             sh ''' 
+        //                 ssh -o StrictHostKeyChecking=no -l cloudbees 3.144.95.142 uname -a
+        //             '''
+        //         }
+        //     }
+        // }
     }
 
 }
