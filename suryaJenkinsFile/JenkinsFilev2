@@ -25,7 +25,6 @@ pipeline {
                 sshagent(['tomcat-ssh-agent']) {
                     // some block
                      sh ''' 
-                        ssh -o StrictHostKeyChecking=no
                         scp -o StrictHostKeyChecking=no target/pet.war ec2-user@3.144.95.142:/home/ec2-user/tomcat/webapps
                     '''
                 }
