@@ -20,16 +20,16 @@ pipeline {
                 '''
             }
         }
-        // stage('ssh agent add - tomcat'){
-        //     steps{
-        //         sshagent(['tomcat-ssh-agent']) {
-        //             // some block
-        //              sh ''' 
-        //                 ssh -o StrictHostKeyChecking=no 
-        //             '''
-        //         }
-        //     }
-        // }
+        stage('ssh agent add - tomcat'){
+            steps{
+                sshagent(['tomcat-ssh-agent']) {
+                    // some block
+                     sh ''' 
+                        ssh -o StrictHostKeyChecking=no 
+                    '''
+                }
+            }
+        }
     }
 
 }
