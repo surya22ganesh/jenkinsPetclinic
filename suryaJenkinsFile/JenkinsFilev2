@@ -17,11 +17,6 @@ pipeline {
                 echo "hello world"
             }
         }
-         stage('Checkout from Git'){
-            steps{
-                git branch: 'main', url: 'https://github.com/surya22ganesh/jenkinsPetclinic.git'
-            }
-        }
         stage('stage 2'){
             steps{
                 sh ''' 
