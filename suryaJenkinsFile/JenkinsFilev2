@@ -22,10 +22,10 @@ pipeline {
         }
         stage('ssh agent add - tomcat'){
             steps{
-                sshagent(['3e88b74b-9cc2-40f4-9ae5-59d0e259067d']) {
+                sshagent(['tomcat-ssh-agent']) {
                     // some block
-                    sh ''' 
-                        ssh -o StrictHostKeyChecking=no
+                     sh ''' 
+                        ssh -o StrictHostKeyChecking=no 
                     '''
                 }
             }
