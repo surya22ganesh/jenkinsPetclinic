@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    environment{
+        name = "global_surya"
+        place = "chennai"
+    }
+
+    stages{
+        stage('hello world'){
+            steps {
+                echo "hello world"
+            }
+        }
+        // stage('stage 2')
+    }
+
+}
