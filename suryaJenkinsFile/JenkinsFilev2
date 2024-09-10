@@ -26,6 +26,7 @@ pipeline {
                     // some block
                      sh ''' 
                         scp -o StrictHostKeyChecking=no target/pet.war ec2-user@3.144.95.142:/home/ec2-user/tomcat/webapps
+                        ssh ec2-user@3.144.95.142 ls /home/ec2-user/tomcat/webapps
                     '''
                 }
             }
