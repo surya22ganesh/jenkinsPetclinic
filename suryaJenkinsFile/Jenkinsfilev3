@@ -5,7 +5,7 @@ pipeline {
     stages{
         stage('hello world'){
            steps{
-             echo "hello world"
+             echo "hello world ${BUILD_DISPLAY_NAME}"
            }
         }
     }
