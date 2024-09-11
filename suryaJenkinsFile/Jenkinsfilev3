@@ -6,6 +6,7 @@ pipeline {
         stage('hello world'){
            steps{
              echo "hello world ${BUILD_DISPLAY_NAME}"
+             echo "${JOB_NAME}"
            }
         }
     }
