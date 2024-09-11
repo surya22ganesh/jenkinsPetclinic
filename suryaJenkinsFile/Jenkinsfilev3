@@ -14,7 +14,9 @@ pipeline {
            }
         }
         stage('docker build'){
-            sh "sudo docker build -t surya22ganesh/sampleimg:${env.IMAGE_TAG}"
+            steps{
+                sh "sudo docker build -t surya22ganesh/sampleimg:${env.IMAGE_TAG}"
+            }
         }
     }
 }
