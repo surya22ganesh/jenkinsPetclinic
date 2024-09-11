@@ -22,9 +22,9 @@ pipeline {
         stage('docker build'){
             steps{
                 sh "sudo git config --global --add safe.directory /var/lib/jenkins/workspace/p1"
-                echo "${LATEST_COMMIT_ID}"
+                echo "${env.LATEST_COMMIT_ID}"
                 // sh "sudo mv target/petclinic target/petclinic.war"
-                sh "sudo docker build -t surya22ganesh/sampleimg:${env.LATEST_COMMIT_ID} ."
+                // sh "sudo docker build -t surya22ganesh/sampleimg:${env.LATEST_COMMIT_ID} ."
             }
         }
     }
