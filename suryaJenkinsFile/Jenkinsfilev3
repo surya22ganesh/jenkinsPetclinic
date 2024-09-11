@@ -17,7 +17,7 @@ pipeline {
             steps{
                 // echo "${env.IMAGE_TAG}"
                 sh "sudo mv target/petclinic target/petclinic.war"
-                sh "sudo docker build -t surya22ganesh/sampleimg:${IMAGE_TAG} ."
+                // sh "sudo docker build -t surya22ganesh/sampleimg:${IMAGE_TAG} ."
             }
         }
     }
