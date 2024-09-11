@@ -21,7 +21,7 @@ pipeline {
         stage('docker build'){
             steps{
                 sh "git config --global --add safe.directory /var/lib/jenkins/workspace/p1"
-                echo "${env.IMAGE_TAG}"
+                echo "${IMAGE_TAG}"
                 // sh "sudo mv target/petclinic target/petclinic.war"
                 sh "sudo docker build -t surya22ganesh/sampleimg:${env.IMAGE_TAG} ."
             }
