@@ -23,8 +23,9 @@ pipeline {
             steps{
                 sh "sudo git config --global --add safe.directory /var/lib/jenkins/workspace/p1"
                 // echo "${env.LATEST_COMMIT_ID}"
+                echo "${IMAGE_TAG}"
                 sh "git rev-parse HEAD"    
-                sh "sudo docker build -t surya22ganesh/sampleimg:git rev-parse HEAD ."
+                sh "sudo docker build -t surya22ganesh/sampleimg:${IMAGE_TAG} ."
             }
         }
     }
