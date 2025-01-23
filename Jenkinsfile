@@ -48,7 +48,8 @@ pipeline {
                     // some block
                     // mvn clean verify sonar:sonar \
                     sh '''
-                        mvn clean sonar:sonar \
+                        mvn clean package
+                        mvn sonar:sonar \
                             -Dsonar.projectName=twitterapp \
                             -Dsonar.projectKey=twitterapp \
                             -Dsonar.host.url=http://18.117.8.239:9000 \
